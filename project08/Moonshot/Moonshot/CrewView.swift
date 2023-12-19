@@ -12,8 +12,9 @@ struct CrewView: View {
     let mission: Mission
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack{
+        //ScrollView(.vertical, showsIndicators: false) {
+        List{
+            // VStack{
                 ForEach(crew, id:\.role) { crewMember in
                     NavigationLink {
                         //Text("Astronaut details")
@@ -42,7 +43,7 @@ struct CrewView: View {
                         .padding(.horizontal)
                     }
                 }
-            }
+            //}
         }
         .navigationTitle(mission.displayName)
         .navigationBarTitleDisplayMode(.inline)
