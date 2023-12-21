@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+struct Navi: Hashable, Identifiable {
+    var id = UUID()
+    var name: String
+}
 
 struct CustomizingNaviView: View {
     @State private var pathStore = PathStore()
@@ -53,7 +57,7 @@ struct BoolBarButtonView: View {
         }
     }
 }
-struct ContentView:View {
+struct EditableTitleView:View {
     @State private var title = "SwiftUI"
     
     var body: some View {
@@ -62,6 +66,30 @@ struct ContentView:View {
                 .navigationTitle($title)
                 .navigationBarTitleDisplayMode(.inline)
         }
+    }
+}
+
+struct ContentView: View {
+    @State private var path:[Navi]
+    
+    var body: some View {
+        NavigationStack {
+            List(self.path){ navi in
+                NavigationLink(navi.name, value: navi)
+            }
+            .navigationDestination(for: Navi.self) { navi in
+                Text("You selected \(navi.name)")
+            }
+            
+        }
+    }
+    
+    init() {
+        self.path = [
+                    Navi(name: "name1"),
+                    Navi(name: "name2"),
+                    Navi(name: "name3")
+                ]
     }
 }
 
