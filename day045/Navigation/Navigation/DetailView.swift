@@ -20,6 +20,10 @@ struct DetailView: View {
                         pathStore.path = NavigationPath()
                     }
                 }
+            
+            Button("Go to Home") {
+                pathStore.path = NavigationPath()
+            }
         }
     }
     

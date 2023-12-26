@@ -102,7 +102,7 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("iExpense")
-            //.navigationBarBackButtonHidden()
+            
         }
     }
     

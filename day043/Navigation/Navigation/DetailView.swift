@@ -13,6 +13,7 @@ struct DetailView: View {
     
     var body: some View {
         VStack {
+            Spacer()
             NavigationLink("Go to Random Number", value: Int.random(in: 1...1000))
                 .navigationTitle("Number: \(number)")
                 .toolbar {
@@ -20,6 +21,11 @@ struct DetailView: View {
                         pathStore.path = NavigationPath()
                     }
                 }
+            Spacer()
+            Button("Go to home") {
+                pathStore.path = NavigationPath()
+            }
+            Spacer()
         }
     }
     
