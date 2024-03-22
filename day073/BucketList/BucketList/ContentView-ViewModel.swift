@@ -16,7 +16,7 @@ extension ContentView {
         private(set) var locations: [Location]
         var selectedPlace: Location?
         let savePath = URL.documentsDirectory.appending(path: "SavedPlaces")
-        var isUnlocked = false
+        var isUnlocked = true
         var errTitle = ""
         var message: String?
         var isError = false
