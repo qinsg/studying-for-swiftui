@@ -7,10 +7,15 @@
 
 import SwiftUI
 import MapKit
+import PhotosUI
+import CoreImage
+import CoreImage.CIFilterBuiltins
+import StoreKit
 
 struct MapView: View {
     @State private var viewModel = ViewModel()
     @State private var mapStyle = MapStyle.hybrid
+    @State private var selectedItem: PhotosPickerItem?
     
     var body: some View {
         VStack {
@@ -38,11 +43,11 @@ struct MapView: View {
                     }
                 }
             }
-            HStack(spacing: 50) {
-                Button("Add Meetup") {
-                    
-                }
-            }
+//            HStack(spacing: 50) {
+//                Button("Add Meetup") {
+//                    EditMeetupView()
+//                }
+//            }
         }
     }
 }
